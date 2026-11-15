@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bitcoin-agent
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: HMAC_SECRET
+        sync: false
+      - key: AGENT_API_KEY
+        sync: false
